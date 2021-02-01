@@ -10,9 +10,10 @@ import Config
 # which you should run after static files are built and
 # before starting your production server.
 config :chatter, ChatterWeb.Endpoint,
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
-
+  url: [scheme:"https", host: "intense-brushlands-13094.herokuapp.com/", port: 443],
+  force_ssl : [rewrite_on: [:x_forwarded_proto]],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  sceret_key_base: "oGwNQT56g8oMzxq6bsqEXnRDTdbaGRuzSdJQXtq0iCc35YMspJfXhkIJutFbX8cz"
 # Do not print debug messages in production
 config :logger, level: :info
 
